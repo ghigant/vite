@@ -79,7 +79,8 @@ module.exports = function(grunt) {
       css: {
         files: {
           '<%= vite.app %>/home.html': [
-        '<%= vite.app %>/styles/{,*/}*.css', '!<%= vite.app %>/styles/main.css'
+            '<%= vite.app %>/styles/{,*/}*.css',
+            '!<%= vite.app %>/styles/main.css' // main css is for static home page
           ]
         }
       },
