@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+
+/*******/
+
+.modal-video,
+.modal-login,
+.modal-register,
+.modal-share,
+.modal-forgot {
+  display: block;
+  position: absolute;
+  top: calc(45% - 50px);
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  z-index: 1000;
+  background: #fff;
+  color: button;
+  padding: 60px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 6px;
+  -webkit-transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+}
+
+.modal-forgot.active,
+.modal-video.active,
+.modal-login.active,
+.modal-register.active,
+.modal-share.active {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-login {
+  z-index: 11;
+}
+
+.okay {
+  display: block;
+  height: 80px;
+  width: 300px;
+  margin: 40px auto 0;
+  background: #e68a6c;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.okay:focus {
+  outline: none;
+}
+
+.okay:hover {
+  background: #e8967b;
+}
+
+.okay:active {
+  background: #ca4c22;
+}
+
+/************/
+
+.bg-overlay {
+  background: rgba(0,0,0, .9);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 3;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+.bg-overlay.active {
+  display: inline-block;
+}
+
+.close {
+  opacity: 0.7;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/*********/

@@ -11,10 +11,16 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- injector:css -->
     <link rel="stylesheet" href="/styles/editor.css">
+    <link rel="stylesheet" href="/styles/icomoon-style.css">
     <!-- endinjector -->
   </head>
-  <body>
-    <div ng-view></div>
+  <body ng-controller="vite.editor.MainCtrl">
+    
+    <!-- TOOLBAR -->
+    <nav ng-include="templates.tools"></nav>
+    <!-- ASIDE MENUS -->
+    <div ng-include="templates.asside"></div>
+
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -23,13 +29,22 @@
     <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/classie/classie.js"></script>
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="bower_components/eventie/eventie.js"></script>
+    <script src="bower_components/get-style-property/get-style-property.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/draggabilly/draggabilly.js"></script>
+    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
     <!-- endbower -->
     <script src="/scripts/app.js"></script>
     <!-- injector:js -->
     <script src="/scripts/editor/module.js"></script>
     <script src="/scripts/shared/module.js"></script>
     <script src="/scripts/home/module.js"></script>
+    <script src="/scripts/editor/controllers/editorController.js"></script>
     <script src="/scripts/editor/controllers/main.js"></script>
+    <script src="/scripts/editor/directives/toolDirecitive.js"></script>
     <script src="/scripts/home/controllers/home.js"></script>
     <script src="/scripts/shared/services/loadMaskService.js"></script>
     <!-- endinjector -->
