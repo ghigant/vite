@@ -1,0 +1,193 @@
+*:focus {
+  outline: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialised;
+  font-family: Oxygen, sans-serif;
+  font-weight: normal;
+  background: black url('../img/main-bg.jpg') no-repeat fixed center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.logo,
+.main-menu {
+  position: absolute;
+  top: 50px;
+  cursor: pointer;
+}
+
+.logo {
+  left: 70px;
+}
+
+.main-menu {
+  right: 70px;
+}
+
+.main-menu li {
+  display: inline;
+}
+
+.main-menu li:nth-child(2) {
+  margin: 0 15px;
+}
+
+.main-menu a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: color ease .3s;
+}
+
+.main-menu a:hover {
+  color: rgba(255,255,255,.5);
+}
+
+.main-menu a:active {
+  color: #F8C26A;
+}
+
+.intro,
+.video,
+.formular {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.intro h1 {
+  font-weight: lighter;
+  padding: 12px 30px;
+  border: 2px solid #F8C26A;
+}
+
+.intro p {
+  margin: 35px auto;
+}
+
+.btn-start {
+  border: none;
+  border-radius: 200px;
+  height: 42px;
+  width: 130px;
+  color: black;
+  background: white;
+  font: bold 14px sans-serif;
+}
+
+.submit {
+  font: bold 16px ProximaNova, sans-serif;
+  background: #F8C16A;
+  padding: 11px 35px 10px;
+  border: 0;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(150, 150, 150, .4);
+}
+
+.submit:hover {
+  cursor: pointer;
+  background: #EAB762;
+}
+
+.btn-start:hover {
+  cursor: pointer;
+  color: #F8C16A;
+  transition: color ease 0.4s;
+}
+
+.btn-start:active {
+  color: #F8C16A;
+}
+
+.btn-start:active {
+  color: #F2AE5A;
+}
+
+
+/*********/
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.formular {
+  background: white;
+  color: #000;
+  padding: 6px 30px 20px;
+  text-align: left;
+}
+
+.formular h3 {
+  padding-bottom: 17px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  margin: 13px -30px 24px;
+}
+
+.formular label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 7px;
+  font-size: 14px;
+}
+
+.formular input {
+  padding: 8px;
+  display: block;
+  width: 230px;
+  border: 1px solid #E5E5E5;
+}
+
+.formular input:focus {
+  border: 1px solid #D6D6D6;
+  -webkit-box-shadow: inset 10px 10px 5px -9px rgba(0,0,0,0.02);
+  -moz-box-shadow: inset 10px 10px 5px -9px rgba(0,0,0,0.02);
+  box-shadow: inset 10px 10px 5px -9px rgba(0,0,0,0.02);
+}
+
+.submit {
+  width: 100%;
+  margin: 6px 0 14px;
+}
+
+.formular a {
+  text-align: left;
+  margin: 15px 0 0;
+}
+
+.forgot-pass,
+.swich a {
+  line-height: 46px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #3498db;
+  margin: 0;
+}
+
+.swich {
+  position: absolute;
+  background: #eee;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  margin-left: -30px;
+}
+
+.swich a {
+  margin-left: 15px;
+}
+
+.forgot-pass:hover,
+.swich a:hover {
+  color: #1C6AA0;
+}

@@ -3,6 +3,8 @@
  */
 'use strict';
 module.exports = function(app) {
+  app.use('/auth', require('./auth'));
+
   app.get('/', function(req, res) {
     res.render('index.html');
   });
