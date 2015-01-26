@@ -1,3 +1,6 @@
-<nav class="menu-vertical cbp-spmenu-left" ng-include="activeItem.template">
-
-</nav>
+<nav class="menu-vertical cbp-spmenu-left">
+  <a href="#" ng-click="closeAside()" class="close-menu">
+    <span class="icon-arrow-long-left"></span>
+  </a>
+  <div class="aside-body" ng-include="content"></div>
+</div>

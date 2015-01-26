@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Vite Editor</title>
     <base href="/">
+    <script src="js/modernizr.custom.js"></script>
     <!-- injector:css -->
     <link rel="stylesheet" href="/styles/editor.css">
     <link rel="stylesheet" href="/styles/icomoon-style.css">
@@ -34,17 +35,23 @@
     <script src="bower_components/draggabilly/draggabilly.js"></script>
     <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
     <!-- endbower -->
+    <script src="js/dragdrop.js"></script>
     <script src="/scripts/app.js"></script>
     <!-- injector:js -->
     <script src="/scripts/editor/module.js"></script>
     <script src="/scripts/shared/module.js"></script>
     <script src="/scripts/home/module.js"></script>
-    <script src="/scripts/editor/controllers/editorController.js"></script>
-    <script src="/scripts/editor/controllers/main.js"></script>
+    <script src="/scripts/editor/controllers/uiEditorController.js"></script>
+    <script src="/scripts/editor/directives/draggableDirective.js"></script>
+    <script src="/scripts/editor/directives/droppableDirective.js"></script>
     <script src="/scripts/editor/directives/toolDirecitive.js"></script>
+    <script src="/scripts/editor/controllers/asside.components.js"></script>
+    <script src="/scripts/editor/services/dragdropService.js"></script>
     <script src="/scripts/home/controllers/home.js"></script>
+    <script src="/scripts/editor/controllers/aside.structure.js"></script>
     <script src="/scripts/shared/controllers/mainAppController.js"></script>
     <script src="/scripts/shared/directives/modalDirective.js"></script>
+    <script src="/scripts/editor/controllers/main.js"></script>
     <script src="/scripts/shared/services/loadMaskService.js"></script>
     <!-- endinjector -->
   </body>

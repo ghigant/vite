@@ -13,7 +13,7 @@
         template: config.views + '/' + tpl + '.html',
         show: false,
       });
-
+      
       self._modal.$promise.then(self._modal.show);
     }
 

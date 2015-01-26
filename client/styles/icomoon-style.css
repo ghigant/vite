@@ -23,6 +23,16 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-long-left:before {
+	content: "\e60b";
+	color: #aaa;
+	font-size: 14px;
+}
+
+.icon-exit:before {
+	content: "\e60c";
+}
+
 .icon-google-plus:before {
 	content: "\e607";
 	color: #dd4b39;
@@ -43,6 +53,10 @@
 	color: #3b5998;
 }
 
+.icon-arrow-move:before {
+	content: "\e60d";
+}
+
 .icon-download:before {
 	content: "\e600";
 }
@@ -51,10 +65,14 @@
 	content: "\e601";
 }
 
-.icon-eye:before {
+.icon-eye-blocked:before {
 	content: "\e602";
 }
 
+.icon-eye:before {
+	content: "\e60f";
+	font-size: 19px;
+}
 .icon-help:before {
 	content: "\e603";
 }
@@ -69,4 +87,9 @@
 
 .icon-trash:before {
 	content: "\e606";
+}
+
+.icon-check:before {
+	content: "\e60e";
+	font-size: 16px;
 }
