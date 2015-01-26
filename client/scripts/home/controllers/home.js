@@ -5,35 +5,31 @@
 
     self._modal = null;
 
-    var modal = $modal({
-      scope: $scope,
-      contentTemplate: config.views + '/register.html',
-      show: false,
-    });
-
-    $scope.openRegister = function() {
-      modal.$promise.then(modal.show);
-    }
-
     self._doOpen = function(tpl) {
       self._modal = $modal({
         scope: $scope,
-        contentTemplate: config.views + '/' + tpl + '.html',
+        animation: 'active',
+        backdropAnimation: 'acitve',
+        template: config.views + '/' + tpl + '.html',
         show: false,
       });
 
-      modal.$promise.then(modal.show);
+      self._modal.$promise.then(self._modal.show);
     }
 
     $scope.openModal = function(type) {
-      if(['login', 'register'].indexOf(type) === -1) {
+      if(['login', 'register', 'tour'].indexOf(type) === -1) {
         return;
       }
-      !self._modal && self._doOpen(type);
+      if(self._modal) {
+        self._modal.hide();
+        self._modal = null;
+      }
+      self._doOpen(type);
     }
 
     $scope.closeModal = function() {
-      modal.hide();
+      self._modal.hide();
       self._modal = null;
     }
   }

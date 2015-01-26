@@ -1,12 +1,22 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 /*******/
 
 .modal-video,
 .modal-login,
 .modal-register,
 .modal-share,
-.modal-forgot {
+.modal-forgot,
+.modal-delete,
+.modal-help,
+.modal-download {
   display: block;
   position: absolute;
   top: calc(45% - 50px);
@@ -32,7 +42,10 @@
 .modal-video.active,
 .modal-login.active,
 .modal-register.active,
-.modal-share.active {
+.modal-share.active,
+.modal-delete.active,
+.modal-help.active,
+.modal-download.active {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);

@@ -7,20 +7,17 @@
     <meta name="viewport" content="width=device-width">
     <title>Vite Editor</title>
     <base href="/">
-    <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- injector:css -->
     <link rel="stylesheet" href="/styles/editor.css">
     <link rel="stylesheet" href="/styles/icomoon-style.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/modals.css">
     <!-- endinjector -->
   </head>
-  <body ng-controller="vite.editor.MainCtrl">
-    
-    <!-- TOOLBAR -->
-    <nav ng-include="templates.tools"></nav>
-    <!-- ASIDE MENUS -->
-    <div ng-include="templates.asside"></div>
+  <body ng-class="{'home-body': isHomePage()}" ng-controller="vite.shared.MainAppCtrl">
+    <div ng-view class="viewport">
 
+    </div>
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -46,6 +43,8 @@
     <script src="/scripts/editor/controllers/main.js"></script>
     <script src="/scripts/editor/directives/toolDirecitive.js"></script>
     <script src="/scripts/home/controllers/home.js"></script>
+    <script src="/scripts/shared/controllers/mainAppController.js"></script>
+    <script src="/scripts/shared/directives/modalDirective.js"></script>
     <script src="/scripts/shared/services/loadMaskService.js"></script>
     <!-- endinjector -->
   </body>

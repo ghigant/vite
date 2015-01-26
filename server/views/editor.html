@@ -4,6 +4,7 @@
 <head>
 	<title>Vite editor</title>
 	<link rel="stylesheet" type="text/css" href="css/editor.css">
+	<link rel="stylesheet" type="text/css" href="css/editor-updates.css">
 	<link rel="stylesheet" type="text/css" href="css/icomoon-style.css">
 	<link rel="stylesheet" type="text/css" href="css/tooltip-classic.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/sweetalert/lib/sweet-alert.css">
@@ -13,19 +14,29 @@
 
 <body>
 	<ul class="tools">
-		<li>
-			<img src="img/whitelogo.png" alt="logo" class="whitelogo">
+
+		<li class="profile">
+			<div class="side"><img src="img/logo.svg" alt="logo" class="whitelogo"></div>
+
+			<div class="side back">
+				<img src="img/avatar.jpg" alt="logo" class="avatar">
+				<a href="#">Profile</a>
+				<a href="#" class="delog">Logout</a>
+			</div>
 		</li>
+
+		<a href="preview.html">
 		<li>
-			<span class="icon-eye"></span>
-			<p>view</p>
-		</li>
-		<li id="pageStructure" data-target="slide-menu">
+				<span class="icon-eye"></span>
+				<p>view</p>
+
+		</li></a>
+		<li data-target="#slide-menu">
 			<span class="icon-plus"></span>
 			<p>add pages</p>
 		</li>
 
-		<li id="pageContent" data-target="content-slide-menu">
+		<li data-target="#content-slide-menu">
 			<span class="icon-edit"></span>
 			<p>edit</p>
 		</li>
@@ -51,29 +62,9 @@
 	</ul>
 
 
-	<!-- - - - - - - CONTENT  - - - - - - - -->
-	<nav class="menu-vertical cbp-spmenu-left" id="content-slide-menu">
-		<a href="#" class="close-menu">
-			<img src="img/arrow.svg" class="arrow-left" />
-		</a>
-		<hgroup>
-			<h3>Content</h3>
-			<p class="description">Drag and drop elements to your page</p>
-		</hgroup>
-
-		<ul class="dom">
-			<li class="draggable">Text items <span class="icon-plus"></span></li>
-			<li class="draggable">Block items <span class="icon-plus"></span></li>
-			<li class="draggable">Misc items <span class="icon-plus"></span></li>
-			<li class="draggable">Jay-z items <span class="icon-plus"></span></li>
-		</ul>
-	</nav>
-
-	<!-- END CONTENT -->
-
 
 	<div class="modal-share">
-		<ul class="social-ico">
+		<ul class="comp-share">
 			<h3>Share this on social media</h3>
 			<li><a href="#"><span class="icon-facebook"></span>Facebook</a></li>
 			<li><a href="#"><span class="icon-twitter"></span>Twitter</a></li>
@@ -83,9 +74,61 @@
 	</div>
 
 
+	<div class="modal-delete">
+		<div class="comp-delete">
+			<h3>Are you sure you want to delete theme?</h3>
+			<button class="btn cancel">no, cancel</button>
+			<button class="btn confirm">yes, delete</button>
+		</div>
+	</div>
+
+	<div class="modal-download">
+		<div class="comp-download">
+			<h3>Downloading <span class="theme-name"><i>My tumblr theme</i></span></h3>
+			<p>Click the button below if the download doesn't start</p>
+			<span class="icon-download"></span>
+			<button class="btn confirm">Download manualy</button>
+		</div>
+	</div>
+
+	<div class="modal-help">
+		<div class="comp-help">
+			<h3>What you need to know</h3>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat.
+			<iframe width="280" height="160" src="//www.youtube.com/embed/9-Qkx9TAM10" frameborder="0" allowfullscreen></iframe>
+			</p>
+		</div>
+	</div>
+
+	<!-- - - - - - - CONTENT  - - - - - - - -->
+
+	<nav class="menu-vertical cbp-spmenu-left" id="content-slide-menu">
+		<a href="#" class="close-menu">
+			<span class="icon-arrow-long-left"></span>
+		</a>
+		<hgroup>
+			<h3>Content</h3>
+			<p class="description">Drag and drop elements to your page</p>
+		</hgroup>
+
+		<ul class="dom">
+			<li class="draggable" data-type="heading">Text items <span class="icon-plus"></span></li>
+			<li class="draggable">Block items <span class="icon-plus"></span></li>
+			<li class="draggable">Misc items <span class="icon-plus"></span></li>
+			<li class="draggable">Jay-z items <span class="icon-plus"></span></li>
+		</ul>
+	</nav>
+
+	<!-- END CONTENT -->
+
+
 	<nav class="menu-vertical cbp-spmenu-left" id="slide-menu">
 		<a href="#" class="close-menu">
-			<img src="img/arrow.svg" class="arrow-left" />
+			<span class="icon-arrow-long-left"></span>
 		</a>
 		<hgroup>
 			<h3>Structure</h3>
@@ -93,31 +136,56 @@
 		</hgroup>
 
 		<ul class="dom">
-			<li>Homepage <span class="icon-trash"></span></li>
-			<li>About <span class="icon-trash"></span></li>
-			<li><a href="#">+ add page</a></li>
+			<li>
+				Tumblr theme
+				<span class="icon-trash"></span>
+				<span class="icon-edit"></span>
+
+			</li>
+
+			<li>
+				Azucar theme
+				<span class="icon-trash"></span>
+				<span class="icon-edit"></span>
+			</li>
+
+			<li class="to-add">
+				<input type='text' name="pageName" placeholder="Page name" class="new-page"><span class="icon-trash"></span><span class="icon-check"></span></li>
+			<li><a href="#" class="just-add">+ add page</a></li>
 		</ul>
 	</nav>
 
 	<div id="content" class='cbp-spmenu-push'>
 
-	<div id="drop-area" class="drop-area">
-		<div class="one-col drop-area__item">
-
-
-			<!-- <span class="tooltip tooltip-effect-4"><span class="tooltip-item">quasar</span><span class="tooltip-content clearfix"><span class="tooltip-text"><strong>Quasars</strong> are believed to be powered by accretion of material into supermassive black holes in the nuclei. <a href="http://en.wikipedia.org/wiki/Quasar">Wikipedia</a></span></span></span> -->
-
+		<div class="save">
+			<a class="saveButton" href="#" />SAVE</a>
+	  		<span class="successfully-saved"><span class="icon-check"></span> Saved</span>
 		</div>
-		<button class="btn action">+ add container</button>
+
+		<div class="bg-overlay">
+			<img src="img/close.svg" class="close" />
 		</div>
+
+
+		<div id="drop-area" class="drop-area">
+
+			<div class="one-col drop-area__item">
+				<span class="icon-arrow-move move">
+
+			</div>
+
+			<button class="btn action">+ add container</button>
+		</div>
+
 	</div>
-
 
 	<script src="bower_components/classie/classie.js"></script>
 	<script src="bower_components/draggabilly/dist/draggabilly.pkgd.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
+	<script src="js/config.js"></script>
 	<script src="js/dragdrop.js"></script>
+	<script src="js/auth.js"></script>
 	<script src="js/app.js"></script>
 		<script>
 			// (function() {

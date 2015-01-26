@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
 
-
 * {
   padding: 0;
   margin: 0;
@@ -138,9 +137,9 @@ hgroup {
 }
 
 /*.cbp-spmenu-push {
-	overflow-x: hidden;
-	position: relative;
-	left: 0;
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
 }*/
 
 .push-toright {
@@ -156,45 +155,45 @@ hgroup {
 }
 
 .dom {
-	list-style-type: none;
-	padding: 0 20px;
+  list-style-type: none;
+  padding: 0 20px;
 }
 
 .dom li {
-	line-height: 26px;
-	font-size: 13px;
+  line-height: 26px;
+  font-size: 13px;
 }
 
 .dom a {
-	text-align: center;
-	width: 100%;
-	display: block;
-	margin: 20px auto 0;
-	color: #EAB762;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 20px auto 0;
+  color: #EAB762;
 }
 
 .dom .icon-trash,
 .dom .icon-plus {
-	float: right;
-	font-size: 12px;
-	margin-top: 7px;
+  float: right;
+  font-size: 12px;
+  margin-top: 7px;
 }
 
 .dom .icon-trash:hover,
 .dom .icon-plus:hover {
-	color: #EAB762;
-	transition: color 0.2s ease;
-	cursor: pointer;
+  color: #EAB762;
+  transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 
 /***********************/
 
 .draggable:hover {
-	border: 1px dashed #E2E2E2;
-	color: #EAB762;
-	padding: 0 6px;
-	margin: -1px -7px;
+  border: 1px dashed #E2E2E2;
+  color: #EAB762;
+  padding: 0 6px;
+  margin: -1px -7px;
 
   cursor: move;
   cursor: -webkit-grab;

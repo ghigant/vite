@@ -80,7 +80,8 @@ body {
   font: bold 14px sans-serif;
 }
 
-.submit {
+.submit,
+.log-tumblr {
   font: bold 16px ProximaNova, sans-serif;
   background: #F8C16A;
   padding: 11px 35px 10px;
@@ -89,10 +90,28 @@ body {
   text-shadow: 1px 1px 1px rgba(150, 150, 150, .4);
 }
 
-.submit:hover {
+.submit:hover{
   cursor: pointer;
   background: #EAB762;
 }
+
+.log-tumblr {
+  background: #32506d;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.log-tumblr:hover {
+  background: #243E55;
+  cursor: pointer;
+}
+
+.or {
+  display: block;
+  margin: -7px auto 8px;
+  text-align: center;
+}
+
 
 .btn-start:hover {
   cursor: pointer;

@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="/css/modals.css">
 	<script src="js/modals.js"></script>
-	<script src="js/jquery-2.1.3.min.js"></script>
 </head>
 <body>
 
@@ -37,7 +36,8 @@
 			<a href="#" class="forgot-pass">Forgot password</a>
 
 			<button type="button" class="submit">Submit</button>
-
+			<p class="or"> or </p>
+			<button type="button" class="log-tumblr">Login with Tumblr</button>
 			<p class="swich">Need an account? <a href="#" class="go-register"> Register</a></p>
 		</form>
 	</div>
@@ -103,7 +103,10 @@
 		<button class="btn-start go-login">START</button>
 	</div>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="/js/config.js"></script>
+	<script src="/js/auth.js"></script>
 	<script src="/js/home.js"></script>
+
 	<script type="text/javascript">
 
 		var login = modalWindow($('.go-login'), $(".modal-login"));

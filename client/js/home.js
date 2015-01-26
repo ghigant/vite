@@ -1,42 +1,32 @@
-(function() {
+(function(global) {
   'use strict';
 
-  var config = {
-    auth: {
-      local: '/auth/local',
-      tumblr: '/auth/tumblr'
-    }
+  var config = global.config,
+    auth = global.auth;
+
+  function getLoginData() {
+    return {
+      username: $('.modal-login input[name="username"]').val(),
+      password: $('.modal-login input[name="password"]').val()
+    };
   }
 
-  var AuthService = {
-    login: function(username, password) {
-      var defer = $.Deferred();
+  function authSuccess() {
+    $(location).attr('href', '/editor');
+  }
 
-      $.post(config.auth.local, {
-        email: username,
-        password: password
-      }).done(function(response) {
-        defer.resolve(response);
-      }).fail(function(response) {
-        defer.reject(response.responseJSON);
-      });
-
-      return defer.promise();
-    },
-    oauth: function(provider) {
-
+  $('.modal-login button').on('click', function(event) {
+    var target = $(event.currentTarget);
+    if(target.hasClass('log-tumblr')) {
+      auth.AuthService.oauth('tumblr');
+    } else if(target.hasClass('submit')) {
+      var data  = getLoginData();
+      auth.AuthService.login(data.username, data.password)
+        .done(authSuccess)
+        .fail(function() {
+          console.log('login fail');
+        });
     }
-  };
-
-  $('.modal-login button.submit').click(function() {
-      console.log('go-login click');
-      AuthService.login('test@test.com', 'test')
-        .done(function(response) {
-          $(location).attr('href', '/editor');
-        })
-        .fail(function(response) {
-          console.log('login fail', response.message);
-        })
   });
 
-})();
+})(typeof exports !== 'undefined' ? exports : this);

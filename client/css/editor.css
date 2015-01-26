@@ -1,5 +1,26 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
 
+@media screen and (max-width: 1280px) {
+  .tools {
+    width: 7% !important;
+  }
+
+  .tools li {
+     height: 9.23% !important;
+  }
+
+  .tools li:first-child {
+      height: 15.23% !important;
+  }
+
+  .back a {
+    padding: 4%;
+  }
+}
+
+/*************************/
+
+
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +33,13 @@ body {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .whitelogo {
+  width: 60%;
+  height: 60%;
   position: relative;
   top: 45%;
   transform: translateY(-50%);
@@ -70,23 +97,11 @@ body {
   -webkit-transition: all ease 0.2s;
 }
 
-
-.tools li:first-child {
-  background: #F8C16A;
-  border: 0;
-  height: 60px;
-}
-
-.tools li:first-child:hover {
-  cursor: pointer;
-  background: #EAB762;
-}
-
 .tools span {
-display: block;
-position: relative;
-top: 50%;
-transform: translateY(-50%);
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .icon-eye,
@@ -179,18 +194,22 @@ hgroup {
   color: #EAB762;
 }
 
-.dom .icon-trash,
-.dom .icon-plus {
+.dom span {
   float: right;
   font-size: 12px;
   margin-top: 7px;
 }
 
 .dom .icon-trash:hover,
-.dom .icon-plus:hover {
+.dom .icon-plus:hover,
+.dom .icon-edit:hover {
   color: #EAB762;
   transition: color 0.2s ease;
   cursor: pointer;
+}
+
+.dom .icon-edit {
+  margin-right: 10px;
 }
 
 /***********************/
@@ -237,10 +256,8 @@ hgroup {
   transition: all 0.3s ease-out;
 }
 
-
-
-.drop-area > div {
-  width: 100%;
+.drop-area .one-col {
+  width: 80%;
   height: 100%;
   -webkit-transition: -webkit-transform 0.4s 0.3s;
   transition: transform 0.4s 0.3s;
@@ -347,9 +364,10 @@ hgroup {
   margin: 30px auto;
   font: 14px sans-serif;
   background: #F8C16A;
-  padding: 11px 35px 10px;
+  padding: 10px 35px;
   border: 0;
   color: #fff;
+  border-radius: 3px;
 }
 
 .btn:hover {
@@ -357,9 +375,28 @@ hgroup {
   background: #EAB762;
 }
 
+.cancel,
+.confirm {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 30px 5px;
+}
+
+.cancel {
+  background: #aaa;
+}
+
+.cancel:hover {
+  background: #777;
+  transition: background ease 0.4s;
+}
+
 /************/
 
-.social-ico {
+.comp-share,
+.comp-delete,
+.comp-help,
+.comp-download {
   top: calc(50% - 65px);
   left: calc(50% - 160px);
   position: absolute;
@@ -369,43 +406,75 @@ hgroup {
   background: #fff;
   text-align: center;
   z-index: 50;
+  border-radius: 3px;
 }
 
-.social-ico::after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255, 1);
+.comp-delete {
+  height: 117px;
 }
 
-.social-ico a {
+.comp-download {
+  height: 150px;
+}
+
+.comp-download p {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.theme-name
+{
+  color: #F8C16A;
+}
+
+.comp-download .icon-download {
+  text-align: center;
+  display: block;
+  font-size: 26px;
+  margin: 20px 0 -10px;
+  color: #ddd;
+}
+
+.comp-help {
+  top: calc(50% - 190px);
+  height: 380px;
+}
+
+.comp-help iframe {
+  display: block;
+  margin: 20px auto;
+}
+
+
+.comp-share a {
   text-decoration: none;
   color: #000;
   font-size: 14px;
 }
 
-.social-ico h3 {
+.comp-share h3,
+.comp-help h3 {
   margin-bottom: 30px;
   color: #000;
 }
 
-.social-ico li {
+.comp-share li {
   position: relative;
   display: inline-block;
   text-align: center;
   margin-right: 10px;
 }
 
-.social-ico li:last-child {
+.comp-share li:last-child {
   margin-right: 0;
 }
 
-.social-ico li:hover {
+.comp-share li:hover {
   top: -2px;
   -webkit-transition: top ease 0.6s;
 }
 
-.social-ico span {
+.comp-share span {
   display: block;
   margin-bottom: 5px;
   font-size: 21px;
@@ -418,11 +487,159 @@ hgroup {
   right: -10px;
   background: #F5F5F5;
   border: 1px solid #E2E2E2;
-  padding: 2px 5px 5px;
+  padding: 2px 5px;
 }
 
-.close-menu:hover{
+.close-menu:hover {
+  background: #fff;
   cursor: pointer;
-  background-color: #fff;
   -webkit-transition: background-color ease-in-out .3s;
 }
+
+.to-add {
+  margin: 6px auto;
+}
+
+.to-add span {
+  margin-left: 10px;
+}
+
+.new-page {
+  height: 21px;
+  padding-left: 4px;
+  border: 1px solid #E2E2E2;
+  width: 150px;
+}
+
+.move,
+.drop-h,
+.drop-v {
+  top: -10px;
+  position: absolute;
+  border: 1px solid #E2E2E2;
+  background: #fff;
+  padding: 4px 7px;
+  color: #000;
+  font-size: 10px;
+}
+
+.move {
+  top: -10px;
+  left: -10px;
+  padding: 4px;
+  font-size: 18px;
+}
+
+.drop-h {
+  right: -10px;
+}
+
+.drop-v {
+  right: 82px;
+}
+
+/*************************/
+
+.profile {
+  font-family: Oxygen, sans-serif;
+  perspective: 600;
+  position: relative;
+
+  background: #F8C16A;
+  border: 0 !important;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease-in-out;
+}
+
+
+.profile:hover {
+  transform: rotateY(180deg);
+    cursor: pointer;
+  background: #EAB762;
+}
+
+.profile .side {
+  backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+
+.profile .back {
+  background: #eaeaed;
+  color: #0087cc;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.back .avatar {
+  width: auto;
+  height: 40%;
+  display: block;
+  border-radius: 100%;
+  margin: 10% auto;
+}
+
+.back a {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background: #C2C7CB;
+  padding: 6% auto;
+}
+
+.back .delog {
+  background: #D8E0E0;
+  text-decoration: none;
+  width: 100%;
+}
+
+.back a:hover {
+  background: #EAB762;
+}
+
+/******************************/
+
+.saveButton {
+  background: #F8C16A;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.7;
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.saveButton:hover {
+  background: #EAB762;
+  opacity: 1;
+}
+
+.successfully-saved {
+  display: none;
+  padding: 6px 10px;
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  border-radius: 3px;
+  border: 1px solid #24B462;
+  background: rgba(58, 209, 122, .4);
+  color: #1FAA5A;
+  font-size: 12px;
+  z-index: 100;
+}
+
+.successfully-saved .icon-check {
+  margin-right: 5px;
+}
+
+.successfully-saved.show {
+  display: inline-block;
+}
+
+/**************/

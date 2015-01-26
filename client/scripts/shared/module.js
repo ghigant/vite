@@ -1,5 +1,5 @@
 (function() {
   'use strict';
 
-  angular.module('vite.shared', []);
+  angular.module('vite.shared', ['ngRoute']);
 })();

@@ -1,21 +1,26 @@
-<div class="register">
-		<img src="img/close.png" alt="close" class="close-ico">
+<div class="modal-register" tabindex="-1" role="dialog">
+		<div class="bg-overlay">
+			<img ng-click="closeModal()" src="img/close.svg" class="close">
+		</div>
 		<form class="formular">
-		<h3>Register</h3>
+			<h3>Register</h3>
+
 			<label for="username">Username</label>
-				<input type="text" class="username" name="username" placeholder="Nickname">
+			<input type="text" class="username" name="username" placeholder="Nickname">
 
 			<label for="email">Email</label>
-				<input type="text" class="email" name="email" placeholder="yourname@email.com">
+			<input type="text" class="email" name="email" placeholder="yourname@email.com" >
 
 			<label for="password">Password</label>
-				<input type="password" class="password" name="password" placeholder="*********">
+			<input type="password" class="password" name="password"placeholder="*********" >
 
 			<label for="repassword">Repeat Password</label>
-				<input type="password" class="repassword" name="repassword" placeholder="*********">
+			<input type="password" class="repassword" name="repassword" placeholder="*********">
 
 			<p class="forgot-pass" align="center">I agree with the terms and conditions</p>
+
 			<button type="button" class="submit">Continue</button>
-			<p class="swich">Have an account? <a href="#"> Log in</a></p>
+
+			<p class="swich">Have an account? <a href="#" ng-click="openModal('login')" class="go-login"> Log in</a></p>
 		</form>
 	</div>

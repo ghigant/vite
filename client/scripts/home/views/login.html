@@ -1,14 +1,19 @@
-<div class="log-in">
-  <img src="img/close.png" alt="close" ng-click="closeModal()" class="close-ico">
+<div class="modal-login" tabindex="-1" role="dialog">
   <form class="formular">
-    <h3>Log in</h3>
-    <label for="username">Username</label>
-    <input type="text" class="username" name="username">
-    <label for="password">Password</label>
-    <input type="password" class="password" name="password">
-    <a href="#" class="forgot-pass">Forgot password</a>
 
-    <button type="button" class="submit">SUBMIT</button>
-    <p class="swich">Need an account? <a href="#"> Register</a></p>
-</form>
+			<h3>Log in</h3>
+			<label for="username">Username</label>
+			<input type="text" class="username" name="username">
+
+			<label for="password">Password</label>
+			<input type="password" class="password" name="password">
+
+			<a href="#" class="forgot-pass">Forgot password</a>
+
+			<button type="submit" class="submit">Submit</button>
+			<p class="or"> or </p>
+			<button type="button" class="log-tumblr">Login with Tumblr</button>
+
+			<p class="swich">Need an account? <a href="#" class="go-register" ng-click="openModal('register')"> Register</a></p>
+	</form>
 </div>

@@ -59,7 +59,9 @@ module.exports = function(grunt) {
         tasks: ['jshint:client']
       },
       styles: {
-        files: ['<%= vite.app %>/styles/{,*/}*.css'],
+        files: [
+          '<%= vite.app %>/styles/{,*/}*.css'
+        ],
         tasks: ['copy:styles', 'autoprefixer']
       }
       // injectCss: {
@@ -80,7 +82,9 @@ module.exports = function(grunt) {
         files: {
           '<%= vite.app %>/home.html': [
             '<%= vite.app %>/styles/{,*/}*.css',
-            '!<%= vite.app %>/styles/main.css' // main css is for static home page
+            // '!<%= vite.app %>/styles/main.css',
+            '!<%= vite.app %>/styles/main.old.css',
+            '!<%= vite.app %>/styles/editor.old.css' // main css is for static home page
           ]
         }
       },

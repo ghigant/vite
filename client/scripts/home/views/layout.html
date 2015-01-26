@@ -3,12 +3,13 @@
     <img src="img/logo.png" alt="Vite Editor" class="logo"></img>
   </a>
   <ul class="main-menu">
-    <li><a href="" ng-click="" class="tour">TOUR</a></li>
-    <li><a href="" ng-click="openModal('register')" class="go-register">REGITER</a></li>
+    <li><a href="" ng-click="openModal('tour')" class="tour">TOUR</a></li>
+    <li><a href="" ng-click="openModal('register')" class="go-register">REGISTER</a></li>
   </ul>
 </header>
+
 <div class="intro">
   <h1>Quicker way to make templates</h1>
   <p>Start using our editor right now by loggin in to your account.</p>
-  <button class="btn-start">START</button>
+  <button ng-click="openModal('login')" class="btn-start">START</button>
 </div>
