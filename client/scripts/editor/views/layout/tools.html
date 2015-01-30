@@ -4,7 +4,7 @@
     <div class="side back">
       <img src="img/avatar.jpg" alt="logo" class="avatar">
       <a href="#">Profile</a>
-      <a href="#" class="delog">Logout</a>
+      <a href="#" ng-click="logout()" class="delog">Logout</a>
     </div>
   </li>
   <editor-tool ng-click="toolClick($index, item)" ng-repeat="item in tools" data-info="item">

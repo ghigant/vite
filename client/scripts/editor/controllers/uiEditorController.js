@@ -1,8 +1,23 @@
 (function() {
   'use strict';
 
-  function UIEditorController($scope, $q, $aside, $modal, cfg) {
+  function UIEditorController($scope, $q, $http, $aside, $modal, cfg, ui, isLogged) {
     var self = this;
+    !isLogged && $scope.login();
+
+    $scope.username = null;
+
+    if(isLogged) {
+      $http.get('/api/tumblr/info')
+        .then(function(response) {
+          console.log('response success');
+          console.log(response.data);
+          $scope.username = response.data.name;
+        }, function(response) {
+          console.log('response failed');
+          console.log(response);
+        });
+    }
 
 
     self._aside = null;
@@ -12,33 +27,7 @@
       tools: cfg.views + '/layout/tools.html',
       content: cfg.views + '/layout/content.html'
     }
-
-    $scope.tools = [{
-      icon: 'icon-eye',
-      text: 'view'
-    },{
-      icon: 'icon-plus',
-      aside: cfg.views + '/aside/structure.html',
-      text: 'add pages'
-    },{
-      icon: 'icon-edit',
-      aside: cfg.views + '/aside/edit.html',
-      text: 'edit'
-    },{
-      icon: 'icon-trash',
-      text: 'trash',
-      modal: cfg.views + '/modals/delete.html'
-    },{
-      icon: 'icon-download',
-      text: 'download'
-    },{
-      icon: 'icon-share',
-      text: 'share',
-      modal: cfg.views + '/modals/share.html'
-    }, {
-      icon: 'icon-help',
-      text: 'help'
-    }];
+    $scope.tools = ui.tools;
 
     self._init = function() {
       angular.forEach($scope.tools, function(tool) {
@@ -78,7 +67,7 @@
     }
 
     $scope.openModal = function(template) {
-      console.log('$scope.openModal:', template);
+      // console.log('$scope.openModal:', template);
       if(angular.isString(template)) {
         self._modal = $modal({
           scope: $scope,
@@ -102,15 +91,22 @@
         $scope.closeAside();
       }
     }
+
+    $scope.$on('$destroy', function() {
+      $scope.closeAside();
+    });
   }
 
   angular.module('vite.editor')
     .controller('vite.editor.UIEditorCtrl', [
       '$scope',
       '$q',
+      '$http',
       '$aside',
       '$modal',
       'vite.editor.config',
+      'vite.editor.uiService',
+      'isLogged',
       UIEditorController
     ]);
 })();
