@@ -15,51 +15,23 @@
     <link rel="stylesheet" href="/styles/modals.css">
     <!-- endinjector -->
   </head>
-  <body ng-class="{'home-body': isHomePage()}" ng-controller="vite.shared.MainAppCtrl">
-    <div ng-view class="viewport">
+  <body>
+    <div ui-view="viewport" class="viewport">
 
     </div>
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
-    <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/classie/classie.js"></script>
-    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
-    <script src="bower_components/eventie/eventie.js"></script>
-    <script src="bower_components/get-style-property/get-style-property.js"></script>
-    <script src="bower_components/get-size/get-size.js"></script>
-    <script src="bower_components/draggabilly/draggabilly.js"></script>
-    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
-    <script src="js/dragdrop.js"></script>
+    <!-- <script src="js/dragdrop.js"></script> -->
     <script src="/scripts/app.js"></script>
     <!-- injector:js -->
-    <script src="/scripts/account/module.js"></script>
-    <script src="/scripts/editor/module.js"></script>
-    <script src="/scripts/shared/module.js"></script>
     <script src="/scripts/home/module.js"></script>
-    <script src="/scripts/editor/controllers/asside.components.js"></script>
-    <script src="/scripts/editor/controllers/main.js"></script>
-    <script src="/scripts/editor/controllers/uiEditorController.js"></script>
-    <script src="/scripts/editor/directives/draggableDirective.js"></script>
-    <script src="/scripts/editor/directives/droppableDirective.js"></script>
-    <script src="/scripts/editor/directives/toolDirecitive.js"></script>
-    <script src="/scripts/account/controllers/login.controller.js"></script>
-    <script src="/scripts/editor/services/dragdropService.js"></script>
-    <script src="/scripts/editor/services/uiService.js"></script>
-    <script src="/scripts/home/controllers/home.js"></script>
-    <script src="/scripts/account/services/user.service.js"></script>
-    <script src="/scripts/shared/controllers/mainAppController.js"></script>
-    <script src="/scripts/shared/directives/modalDirective.js"></script>
-    <script src="/scripts/editor/controllers/aside.structure.js"></script>
-    <script src="/scripts/shared/services/auth.service.js"></script>
-    <script src="/scripts/shared/services/loadMaskService.js"></script>
+    <script src="/scripts/home/controllers/home.controller.js"></script>
+    <script src="/scripts/home/controllers/login.controller.js"></script>
     <!-- endinjector -->
   </body>
 </html>

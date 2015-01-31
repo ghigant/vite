@@ -1,22 +1,23 @@
 (function() {
   'use strict';
   angular.module('vite', [
-    'vite.shared',
-    'vite.account',
+    // 'vite.shared',
+    // 'vite.account',
     'vite.home',
-    'vite.editor'
+    //'vite.editor',
+    'ngCookies'
   ])
   .config([
     '$locationProvider',
-    '$modalProvider',
+    // '$modalProvider',
     '$httpProvider',
-    function($locationProvider, $modalProvider, $httpProvider) {
+    function($locationProvider, $httpProvider) {
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('!');
 
-      angular.extend($modalProvider.defaults, {
-        animation: 'active'
-      });
+      // angular.extend($modalProvider.defaults, {
+      //   animation: 'active'
+      // });
       $httpProvider.interceptors.push('authInterceptor');
     }
   ])
@@ -49,15 +50,9 @@
   .run([
     '$rootScope',
     '$location',
-    'vite.shared.AuthService',
+    // 'vite.shared.AuthService',
     function($rootScope, $location, AuthService) {
-      $rootScope.$on('$routeChangeStart', function (event, next) {
-        // AuthService.isLoggedInAsync(function(loggedIn) {
-        //   if (true && !loggedIn) {
-        //     $location.path('/login');
-        //   }
-        // });
-      });
+      $rootScope.$on('$routeChangeStart', function (event, next) {});
       $rootScope.$on('$routeChangeError', function() {
         console.log('$routeChangeError');
         console.log(arguments);

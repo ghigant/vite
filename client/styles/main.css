@@ -6,18 +6,17 @@ body {
   -webkit-font-smoothing: antialised;
   font-family: Oxygen, sans-serif;
   font-weight: normal;
-  height: 100%;
-  width: 100%;
   margin: 0;
 }
+body, .viewport, .home-body {
+  height: 100%;
+  width: 100%;
+}
 
-body.home-body {
+.home-body {
   background: black url('../img/main-bg.jpg') no-repeat fixed center;
 }
 
-.viewport {
-  height: 100%;
-}
 
 .logo,
 .main-menu {
@@ -80,11 +79,14 @@ body.home-body {
 .btn-start {
   border: none;
   border-radius: 200px;
-  height: 42px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 130px;
   color: black;
   background: white;
   font: bold 14px sans-serif;
+  display: block;
+  margin: 0 auto;
 }
 
 .submit,
