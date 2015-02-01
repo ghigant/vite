@@ -11,15 +11,15 @@
           link: function($scope, $el, $attr) {
             $el.removeAttr('draggable');
 
-            var draggable = new Draggable($el[0], ddService.droppable, {
-              // helper: true,
-              onStart: function() {
-                console.log('drag.start');
-              },
-              onEnd: function(wasDropped) {
-                console.log('drag.end', 'dropped:', wasDropped);
-              }
-            });
+            // var draggable = new Draggable($el[0], ddService.droppable, {
+            //   // helper: true,
+            //   onStart: function() {
+            //     console.log('drag.start');
+            //   },
+            //   onEnd: function(wasDropped) {
+            //     console.log('drag.end', 'dropped:', wasDropped);
+            //   }
+            // });
           }
         };
       }

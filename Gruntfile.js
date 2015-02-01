@@ -105,7 +105,6 @@ module.exports = function(grunt) {
             '<%= vite.app %>/scripts/{,*/,**/}*.js',
             '!<%= vite.app %>/scripts/app.js',
             '!<%= vite.app %>/scripts/account/{,*/,**/}*.js',
-            '!<%= vite.app %>/scripts/editor/{,*/,**/}*.js',
             '!<%= vite.app %>/scripts/shared/{,*/,**/}*.js'
           ]
         }

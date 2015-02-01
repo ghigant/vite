@@ -34,21 +34,40 @@
                 $modal.open({
                   templateUrl: config.views + '/login.html',
                   windowTemplateUrl: config.views + '/modal/window.html',
-                  backdrop: false,
-                  animate: 'active',
+                  backdropClass: 'bg-overlay',
                   controller: 'vite.home.LoginCtrl'
+                })
+                .result.catch(function(reason) {
+                  if(reason !== 'state:change') {
+                    $state.go('vite.home');
+                  }
                 });
-                // console.log('vite.login');
-                // console.log($state);
-                // console.log($modal);
               }
             ]
           })
           .state('vite.register', {
             url: '/register',
-            onEnter: function() {
-              console.log('vite.register');
-            }
+            onEnter: [
+              '$state',
+              '$modal',
+              function($state, $modal) {
+                $modal.open({
+                  templateUrl: config.views + '/register.html',
+                  windowTemplateUrl: config.views + '/modal/window.html',
+                  backdropClass: 'bg-overlay',
+                  controller: 'vite.home.RegisterCtrl'
+                })
+                .result
+                  .then(function() {
+
+                  })
+                  .catch(function(reason) {
+                    if(reason !== 'state:change') {
+                      $state.go('vite.home');
+                    }
+                  });
+              }
+            ]
           })
           .state('vite.forgot', {
             url: '/forgot',

@@ -2,18 +2,13 @@
   'use strict';
 
   angular.module('vite.home')
-    .controller('vite.home.LoginCtrl', [
+    .controller('vite.home.RegisterCtrl', [
       '$scope',
       '$state',
       '$modalInstance',
-      function($scope, $state, $modalInstance) {
-        console.log($modalInstance);
-        $scope.login = function() {
-
-        }
+      function RegisterCtrl($scope, $state, $modalInstance) {
 
         $scope.$on('$stateChangeStart', function() {
-          console.log('$stateChangeStart');
           $modalInstance.dismiss('state:change');
         });
       }

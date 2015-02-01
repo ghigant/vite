@@ -11,12 +11,12 @@
             console.log('droppable');
             $el.addClass('drop-area__item');
             var dom = $el[0];
-            var droppable = new Droppable(dom, {
-              onDrop : function( instance, draggableEl ) {
-              }
-            });
-
-            ddService.addDroppable(droppable);
+            // var droppable = new Droppable(dom, {
+            //   onDrop : function( instance, draggableEl ) {
+            //   }
+            // });
+            //
+            // ddService.addDroppable(droppable);
           }
         }
       }

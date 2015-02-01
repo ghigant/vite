@@ -17,7 +17,7 @@ button:focus {
 .modal-delete,
 .modal-help,
 .modal-download,
-.modal {
+.modal-window {
   display: block;
   position: absolute;
   top: calc(45% - 50px);
@@ -26,11 +26,16 @@ button:focus {
   height: 100px;
   z-index: 1000;
   background: #fff;
-  /*color: button;*/
+  color: button;
   padding: 60px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 6px;
+  -webkit-transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
   opacity: 0;
 }
 
@@ -42,54 +47,11 @@ button:focus {
 .modal-delete.active,
 .modal-help.active,
 .modal-download.active,
-.modal.active {
-  -webkit-transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.modal-window.active {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1;
-}
-
-.modal-register.active.ng-enter,
-.modal-login.active.ng-enter,
-.modal-share.active.ng-enter,
-.modal-delete.active.ng-enter,
-.modal.active.ng-enter {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  opacity: 0;
-}
-.modal-register.active.ng-enter-active,
-.modal-login.active.ng-enter-active,
-.modal-share.active.ng-enter-active,
-.modal-delete.active.ng-enter-active,
-.modal.active.ng-enter-active {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
-}
-.modal-register.active.ng-leave,
-.modal-login.active.ng-leave,
-.modal-share.active.ng-leave,
-.modal-delete.active.ng-leave,
-.modal.active.ng-leave {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
-}
-.modal-register.active.ng-leave-active,
-.modal-login.active.ng-leave-active,
-.modal-share.active.ng-leave-active,
-.modal-delete.active.ng-leave-active,
-.modal.active.ng-leave-active {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  opacity: 0;
 }
 
 .modal-login {
@@ -122,9 +84,8 @@ button:focus {
 
 /************/
 
-.bg-overlay,
-.modal-backdrop {
-  background: rgba(0,0,0,.9);
+.bg-overlay {
+  background: rgba(0,0,0, .9);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -135,12 +96,13 @@ button:focus {
   -webkit-transition: opacity 0.5s ease-out;
   transition: opacity 0.5s ease-out;
 }
-.bg-overlay.active,
-.modal-backdrop.active {
+
+.bg-overlay.active {
   display: inline-block;
 }
-
-
+.modal-open .bg-overlay {
+  display: inline-block;
+}
 .close {
   opacity: 0.7;
   position: absolute;

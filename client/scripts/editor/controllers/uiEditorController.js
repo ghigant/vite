@@ -1,10 +1,9 @@
 (function() {
   'use strict';
 
-  function UIEditorController($scope, $q, $http, $aside, $modal, cfg, ui, isLogged) {
+  function UIEditorController($scope, $q, $http, cfg, ui, isLogged) {
     var self = this;
-    !isLogged && $scope.login();
-
+    console.log('obj');
     $scope.username = null;
 
     if(isLogged) {
@@ -95,6 +94,8 @@
     $scope.$on('$destroy', function() {
       $scope.closeAside();
     });
+
+
   }
 
   angular.module('vite.editor')
@@ -102,11 +103,9 @@
       '$scope',
       '$q',
       '$http',
-      '$aside',
-      '$modal',
       'vite.editor.config',
       'vite.editor.uiService',
-      'isLogged',
+      // 'isLogged',
       UIEditorController
     ]);
 })();

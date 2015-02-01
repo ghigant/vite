@@ -7,6 +7,7 @@ body {
   font-family: Oxygen, sans-serif;
   font-weight: normal;
   margin: 0;
+  position: relative;
 }
 body, .viewport, .home-body {
   height: 100%;
@@ -79,8 +80,8 @@ body, .viewport, .home-body {
 .btn-start {
   border: none;
   border-radius: 200px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   width: 130px;
   color: black;
   background: white;

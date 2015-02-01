@@ -4,7 +4,7 @@
     // 'vite.shared',
     // 'vite.account',
     'vite.home',
-    //'vite.editor',
+    'vite.editor',
     'ngCookies'
   ])
   .config([
@@ -15,9 +15,6 @@
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('!');
 
-      // angular.extend($modalProvider.defaults, {
-      //   animation: 'active'
-      // });
       $httpProvider.interceptors.push('authInterceptor');
     }
   ])
