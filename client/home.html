@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="vite">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Vite Editor</title>
     <base href="/">
-    <script src="js/modernizr.custom.js"></script>
+    <!-- <script src="js/modernizr.custom.js"></script> -->
     <!-- injector:css -->
     <link rel="stylesheet" href="/styles/editor.css">
     <link rel="stylesheet" href="/styles/icomoon-style.css">
@@ -16,33 +16,8 @@
     <!-- endinjector -->
   </head>
   <body>
-    <div ui-view="viewport" class="viewport">
-
-    </div>
-    <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <!-- endbower -->
-    <!-- <script src="js/dragdrop.js"></script> -->
-    <script src="/scripts/app.js"></script>
-    <!-- injector:js -->
-    <script src="/scripts/editor/module.js"></script>
-    <script src="/scripts/home/module.js"></script>
-    <script src="/scripts/editor/services/dragdropService.js"></script>
-    <script src="/scripts/editor/controllers/main.js"></script>
-    <script src="/scripts/editor/directives/draggableDirective.js"></script>
-    <script src="/scripts/editor/directives/droppableDirective.js"></script>
-    <script src="/scripts/editor/directives/toolDirecitive.js"></script>
-    <script src="/scripts/editor/controllers/asside.components.js"></script>
-    <script src="/scripts/editor/controllers/uiEditorController.js"></script>
-    <script src="/scripts/editor/services/uiService.js"></script>
-    <script src="/scripts/home/controllers/home.controller.js"></script>
-    <script src="/scripts/home/controllers/login.controller.js"></script>
-    <script src="/scripts/home/controllers/register.controller.js"></script>
-    <script src="/scripts/editor/controllers/aside.structure.js"></script>
-    <!-- endinjector -->
+    <div ui-view="viewport" class="viewport"></div>
+    <script src="bower_components/headjs-notify/dist/head.load.min.js"></script>
+    <script src="scripts/boot.js"></script>
   </body>
 </html>

@@ -1,21 +1,21 @@
 (function() {
   'use strict';
 
-  angular.module('vite.home')
-    .controller('vite.home.LoginCtrl', [
-      '$scope',
-      '$state',
-      '$modalInstance',
-      function($scope, $state, $modalInstance) {
-        console.log($modalInstance);
-        $scope.login = function() {
+  function LoginCtrl($scope, $state, $modalInstance) {
+    $scope.login = function() {
+      
+    }
 
-        }
+    $scope.$on('$stateChangeStart', function($event) {
+      $modalInstance.dismiss('state:change');
+    });
+  }
 
-        $scope.$on('$stateChangeStart', function() {
-          console.log('$stateChangeStart');
-          $modalInstance.dismiss('state:change');
-        });
-      }
-    ]);
+  return [
+    '$scope',
+    '$state',
+    '$modalInstance',
+    LoginCtrl
+  ];
+
 })();
