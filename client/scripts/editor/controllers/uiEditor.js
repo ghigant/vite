@@ -9,7 +9,6 @@
     function UIEditorController($scope, $q, $http, ui) {
       var self = this;
       $scope.username = null;
-
       self._aside = null;
       self._modal = null;
 
@@ -17,6 +16,7 @@
         tools: config.views + '/layout/tools.html',
         content: config.views + '/layout/content.html'
       }
+
       $scope.tools = ui.tools;
 
       self._init = function() {

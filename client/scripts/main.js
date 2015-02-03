@@ -8,6 +8,7 @@
     function(home, editor) {
       var app = angular.module('vite', [
         'ui.router',
+        'ngAnimate',
         home.name,
         editor.name
       ]);
@@ -17,10 +18,8 @@
         function($locationProvider) {
           $locationProvider.html5Mode(true);
           $locationProvider.hashPrefix('!');
-
         }
       ]);
-
 
       angular.bootstrap(document.getElementsByTagName('body')[0], ['vite']);
 

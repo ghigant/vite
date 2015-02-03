@@ -683,10 +683,59 @@ hgroup {
   display: block;
   cursor: move;
   border: 1px solid gray;
-
 }
 
 .gridster li * {
   width: 100%;
   height: 100%;
+}
+/* preview page */
+.menu-preview {
+  list-style: none;
+  background: #F8C16A;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  z-index: 1000;
+}
+
+.menu-preview li {
+  display: inline-block;
+  padding: 10px 15px;
+  border-left: 1px solid #EAB762;
+  margin-right: -5px;
+}
+
+.menu-preview a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+}
+
+.menu-preview li:hover {
+  background: #EAB762;
+  transition: background ease 0.4s;
+}
+
+.menu-preview img {
+  height: 17px;
+}
+
+.prev-download {
+  margin-right: 5px;
+}
+
+.preview-theme {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

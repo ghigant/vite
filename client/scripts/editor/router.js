@@ -17,9 +17,9 @@
               function($q) {
                 var dfd = $q.defer();
                 require([
-                  'editor/controllers/uiEditor'
+                  'editor/controllers/uiEditor',
+                  'editor/controllers/toolbar.controller'
                 ], function() {
-                  console.log('loaded editor deps');
                   dfd.resolve();
                 });
 
@@ -28,23 +28,41 @@
           },
           views: {
             'viewport@': {
-              templateUrl: config.views + '/index.html',
-              controller: 'vite.editor.UIEditorCtrl'
+              templateUrl:  config.views + '/index.html',
+              controller:   config.name + '.UIEditorCtrl'
             }
           }
         })
         .state('editor', {
-          url: '/',
+          url: '',
+          abstract: true,
           parent: 'editorBase',
           views: {
             toolbar: {
-              templateUrl: config.views + '/layout/tools.html'
-            },
-            aside: {
-              template: '<a href="/editor/structure"><h1>Aside 1</h1></a>'
+              templateUrl: config.views + '/layout/tools.html',
+              controller: config.name + '.UIToolsCtrl'
             },
             content: {
               templateUrl: config.views + '/layout/content.html',
+            }
+          }
+        })
+        .state('editor.index', {
+          url: '/'
+        })
+        .state('editor.structure', {
+          url: '/structure',
+          views: {
+            'aside@editorBase': {
+              templateUrl: config.views + '/aside/structure.html'
+            }
+          }
+        })
+        .state('editor.components', {
+          url: '/components',
+          views: {
+            'aside@editorBase': {
+              templateUrl: config.views + '/aside/components.html'
             }
           }
         })
@@ -52,7 +70,7 @@
           url: '/preview',
           views: {
             'viewport@': {
-              template: '<h1>Preview Page</h1>'
+              templateUrl: config.views + '/layout/preview.html'
             }
           }
         });
