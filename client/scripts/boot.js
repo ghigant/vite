@@ -12,6 +12,23 @@
     require.config({
       appDir: '',
       baseUrl: './scripts',
+      paths: {
+        'draggabilly':        './../bower_components/draggabilly/dist/draggabilly.pkgd',
+        'get-style-property': './../bower_components/get-style-property/get-style-property',
+        'modernizr':          './../js/modernizr.custom',
+        'classie':            './../bower_components/classie/classie',
+        'dragdrop':           './../js/dragdrop'
+      },
+      shim: {
+        dragdrop: {
+          deps: ['modernizr', 'draggabilly', 'classie'],
+          exports: 'dragdrop',
+          init: function(modernizr, Draggabilly, classie) {
+            window.Draggabilly = Draggabilly;
+            window.classie = classie;
+          }
+        }
+      }
     });
 
     require( ['main'], function(app) {

@@ -16,13 +16,17 @@
               '$q',
               function($q) {
                 var dfd = $q.defer();
-                require([
-                  'editor/controllers/uiEditor',
-                  'editor/controllers/toolbar.controller'
-                ], function() {
-                  dfd.resolve();
+                require(['get-style-property'], function(getStyleProperty) {
+                  window.getStyleProperty = getStyleProperty;
+                  require([
+                    'dragdrop',
+                    'editor/controllers/uiEditor',
+                    'editor/controllers/toolbar.controller',
+                    'editor/directives/droppable.directive'
+                  ], function() {
+                    dfd.resolve();
+                  });
                 });
-
                 return dfd.promise;
             }]
           },
@@ -56,6 +60,21 @@
             'aside@editorBase': {
               templateUrl: config.views + '/aside/structure.html'
             }
+          },
+          resolve: {
+            loadDeps: [
+              '$q',
+              function($q) {
+                var dfd = $q.defer();
+                require([
+                  'editor/directives/draggable.directive'
+                ], function() {
+                  dfd.resolve();
+                });
+
+                return dfd.promise;
+              }
+            ]
           }
         })
         .state('editor.components', {
