@@ -2,11 +2,13 @@
   'use strict';
 
   define([
-    'editor/config'
+    'editor/config',
+    'account/module',
+    'account/services/auth.service'
   ],
-  function(config) {
+  function(config, account) {
     function EditorRouter($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.when('/editor', '/editor/');
+      // $urlRouterProvider.when('/editor', '/editor/');
       $stateProvider
         .state('editorBase', {
           url: '/editor',
@@ -28,7 +30,24 @@
                   });
                 });
                 return dfd.promise;
-            }]
+            }],
+            auth: [
+              '$q',
+              '$location',
+              account.name + '.AuthService',
+              function($q, $location, AuthSrvice) {
+                var dfd = $q.defer();
+                AuthSrvice.isLoggedInAsync(function(isAuth) {
+                  if(!isAuth) {
+                    dfd.reslove(isAuth);
+                    $location.path('/login');
+                  } else {
+                    dfd.resolve(isAuth);
+                  }
+                });
+                return dfd.promise;
+              }
+            ]
           },
           views: {
             'viewport@': {
@@ -52,7 +71,7 @@
           }
         })
         .state('editor.index', {
-          url: '/'
+          url: ''
         })
         .state('editor.structure', {
           url: '/structure',

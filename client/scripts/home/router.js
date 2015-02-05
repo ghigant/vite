@@ -34,7 +34,7 @@
               })
               .result.catch(function(reason) {
                 if(reason !== 'state:change') {
-                  $state.go('vite.home');
+                  $state.go('editor.index');
                 }
               });
             }
