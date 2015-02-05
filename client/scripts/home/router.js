@@ -3,7 +3,7 @@
 
   define([
     'home/config',
-    'home/controllers/login',
+    'home/controllers/login.controller',
     'home/controllers/register',
   ], function(config, LoginCtrl, RegisterCtrl) {
     function HomeRouter($stateProvider) {
@@ -32,7 +32,10 @@
                 backdropClass: 'bg-overlay',
                 controller: LoginCtrl
               })
-              .result.catch(function(reason) {
+              .result.then(function() {
+                $state.go('editor.index');
+              })
+              .catch(function(reason) {
                 if(reason !== 'state:change') {
                   $state.go('editor.index');
                 }
@@ -54,7 +57,7 @@
               })
               .result
                 .then(function() {
-
+                  $state.go('editor.index');
                 })
                 .catch(function(reason) {
                   if(reason !== 'state:change') {

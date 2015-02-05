@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/vite-dev'
   },
 
-  seedDB: false
+  seedDB: true
 };
