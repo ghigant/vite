@@ -45,6 +45,7 @@
     "passport-tumblr": "^0.1.2",
     "passport-twitter": "^1.0.2",
     "serve-favicon": "^2.2.0",
-    "tumblr.js": "0.0.4"
+    "tumblr.js": "0.0.4",
+    "underscore": "^1.7.0"
   }
 }

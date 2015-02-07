@@ -67,6 +67,12 @@
             },
             content: {
               templateUrl: config.views + '/layout/content.html',
+              controller: [
+                '$scope',
+                function EditorController($scope) {
+                  
+                }
+              ]
             }
           }
         })
@@ -77,7 +83,8 @@
           url: '/structure',
           views: {
             'aside@editorBase': {
-              templateUrl: config.views + '/aside/structure.html'
+              templateUrl: config.views + '/aside/structure.html',
+              controller: config.name + '.StructureCtrl'
             }
           },
           resolve: {
@@ -86,7 +93,7 @@
               function($q) {
                 var dfd = $q.defer();
                 require([
-                  'editor/directives/draggable.directive'
+                  'editor/controllers/structure.controller'
                 ], function() {
                   dfd.resolve();
                 });
@@ -102,6 +109,23 @@
             'aside@editorBase': {
               templateUrl: config.views + '/aside/components.html'
             }
+          },
+          resolve: {
+            loadDeps: [
+              '$q',
+              function($q) {
+                var deferred = $q.defer();
+                require([
+                  'editor/directives/draggable.directive',
+                  'editor/directives/container.directive',
+                  'editor/services/themeComponents'
+                ], function() {
+                  deferred.resolve(arguments);
+                });
+
+                return deferred.promise;
+              }
+            ]
           }
         })
         .state('editor.preview', {

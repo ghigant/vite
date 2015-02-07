@@ -233,7 +233,11 @@ hgroup {
 }
 
 /***********************/
-
+/*.draggable {
+  width: 200px;
+  height: 26px;
+  position: relative;
+}*/
 .draggable:hover {
   border: 1px dashed #E2E2E2;
   color: #EAB762;
@@ -287,7 +291,7 @@ hgroup {
 
 .drop-area__item {
   position: relative;
-  display: inline-block;
+  /*display: inline-block;*/
 
   border-radius: 4px;
   background: rgba(0,0,0,0.1);

@@ -9,21 +9,34 @@
   ],function(module, service, dnd) {
     module.directive('draggable', [
       '$document',
+      '$rootScope',
       module.name + '.DragDropService',
-      function draggableComponent($document, ddService) {
+      function draggableComponent($document, $rootScope, ddService) {
         return {
           restrict: 'A',
           link: function postLink($scope, $el) {
-            $el.removeAttr('draggable');
+            $el.addClass('draggable');
             var draggable = new Draggable($el[0], ddService.droppable, {
-              // helper: true,
+              //helper: true,
               onStart: function() {
                 console.log('drag.start');
+                console.log(arguments);
+                $rootScope.$apply(function() {
+                  $rootScope.asideOpen = false;
+                });
+
               },
               onEnd: function(wasDropped) {
-                console.log('drag.end', 'dropped:', wasDropped);
+                $rootScope.$apply(function() {
+                  $rootScope.asideOpen = true;
+                });
+                console.log('drag.stop:', wasDropped);
+                console.log($el[0]);
               }
             });
+            $scope.test = function() {
+              console.log('test');
+            }
           }
         }
       }

@@ -1,28 +1,18 @@
-<nav class="menu-vertical cbp-spmenu-left" ng-class="{'cbp-spmenu-open': asideOpen}" >
+<nav class="menu-vertical cbp-spmenu-left" ng-class="{'cbp-spmenu-open': asideOpen}">
   <a href="#" ui-sref="editor.index" class="close-menu">
     <span class="icon-arrow-long-left"></span>
   </a>
   <hgroup>
-    <h3>Structure</h3>
-    <p class="description">Navigate and add more pages to your site</p>
+    <h3>Content</h3>
+    <p class="description">Drag and drop elements to your page</p>
   </hgroup>
 
   <ul class="dom">
-    <li>
-      Tumblr theme
-      <span class="icon-trash"></span>
-      <span class="icon-edit"></span>
-
-    </li>
-
-    <li>
-      Azucar theme
-      <span class="icon-trash"></span>
-      <span class="icon-edit"></span>
-    </li>
-
-    <li class="to-add">
-      <input type='text' name="pageName" placeholder="Page name" class="new-page"><span class="icon-trash"></span><span class="icon-check"></span></li>
-    <li><a href="#" class="just-add">+ add page</a></li>
+    <li class="draggable" draggable data-type="container">Container <span class="icon-plus"></li>
+    <li class="draggable" draggable>Blog  <span class="icon-plus"></span></li>
+    <li class="draggable" draggable>Text items <span class="icon-plus"></span></li>
+    <li class="draggable" draggable>Block items <span class="icon-plus"></span></li>
+    <li class="draggable" draggable>Misc items <span class="icon-plus"></span></li>
+    <li class="draggable" draggable>Jay-z items <span class="icon-plus"></span></li>
   </ul>
 </nav>
