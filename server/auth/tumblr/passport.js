@@ -11,9 +11,6 @@
       callbackURL: config.tumblr.callbackURL
     }, function(token, tokenSecret, profile, done) {
       var tumblrUser = profile._json.response.user;
-      console.log('token:', token);
-      console.log('tokenSecret:', tokenSecret);
-
       User.findOne({
         'tumblr.name': profile.username
       },function(err, user) {

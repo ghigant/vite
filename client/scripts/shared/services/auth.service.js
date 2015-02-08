@@ -1,4 +1,4 @@
-(function() {
+(function(define, angular) {
   'use strict';
 
   angular.module('vite.shared')
@@ -143,4 +143,4 @@
         };
       }
     ]);
-})();
+})(define, angular);

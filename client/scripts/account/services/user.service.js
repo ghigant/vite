@@ -1,8 +1,10 @@
-(function() {
+(function(define, angular) {
   'use strict';
 
-  angular.module('vite.account')
-    .factory('vite.account.UserService', [
+  define([
+    'account/module'
+  ], function(module) {
+    module.factory(module.name + '.UserService', [
       '$resource',
       function($resource) {
         return $resource('/api/users/:id/:controller', {
@@ -20,7 +22,8 @@
               id:'me'
             }
           }
-	       });
+         });
       }
     ]);
-})();
+  });
+})(define, angular);

@@ -1,0 +1,29 @@
+.one-col *{
+    box-sizing: border-box;
+}
+/*-- our cleafix hack -- */
+.row:before,
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    width: 33.33%;
+    /*-- our gutter -- */
+    padding: 12px;
+    border: 1px dashed black;
+}
+
+.col-1 { width: 33.33%; }
+.col-2 { width: 50%; }
+.col-3 { width: 100%; }
+
+[class*='col-']:empty {
+height: 140px;
+}
+.outline, .outline *{
+    outline: 1px solid #F6A1A1;
+}
