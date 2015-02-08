@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+/*@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);*/
 
 @media screen and (max-width: 1280px) {
   .tools {
@@ -233,7 +233,11 @@ hgroup {
 }
 
 /***********************/
-
+/*.draggable {
+  width: 200px;
+  height: 26px;
+  position: relative;
+}*/
 .draggable:hover {
   border: 1px dashed #E2E2E2;
   color: #EAB762;
@@ -287,7 +291,7 @@ hgroup {
 
 .drop-area__item {
   position: relative;
-  display: inline-block;
+  /*display: inline-block;*/
 
   border-radius: 4px;
   background: rgba(0,0,0,0.1);
@@ -683,10 +687,59 @@ hgroup {
   display: block;
   cursor: move;
   border: 1px solid gray;
-
 }
 
 .gridster li * {
   width: 100%;
   height: 100%;
+}
+/* preview page */
+.menu-preview {
+  list-style: none;
+  background: #F8C16A;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  z-index: 1000;
+}
+
+.menu-preview li {
+  display: inline-block;
+  padding: 10px 15px;
+  border-left: 1px solid #EAB762;
+  margin-right: -5px;
+}
+
+.menu-preview a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+}
+
+.menu-preview li:hover {
+  background: #EAB762;
+  transition: background ease 0.4s;
+}
+
+.menu-preview img {
+  height: 17px;
+}
+
+.prev-download {
+  margin-right: 5px;
+}
+
+.preview-theme {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

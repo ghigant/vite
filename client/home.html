@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="vite">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,52 +7,18 @@
     <meta name="viewport" content="width=device-width">
     <title>Vite Editor</title>
     <base href="/">
-    <script src="js/modernizr.custom.js"></script>
+    <!-- <script src="js/modernizr.custom.js"></script> -->
     <!-- injector:css -->
     <link rel="stylesheet" href="/styles/editor.css">
+    <link rel="stylesheet" href="/styles/editzone.css">
     <link rel="stylesheet" href="/styles/icomoon-style.css">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/modals.css">
     <!-- endinjector -->
   </head>
-  <body ng-class="{'home-body': isHomePage()}" ng-controller="vite.shared.MainAppCtrl">
-    <div ng-view class="viewport">
-
-    </div>
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
-    <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/classie/classie.js"></script>
-    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
-    <script src="bower_components/eventie/eventie.js"></script>
-    <script src="bower_components/get-style-property/get-style-property.js"></script>
-    <script src="bower_components/get-size/get-size.js"></script>
-    <script src="bower_components/draggabilly/draggabilly.js"></script>
-    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
-    <!-- endbower -->
-    <script src="js/dragdrop.js"></script>
-    <script src="/scripts/app.js"></script>
-    <!-- injector:js -->
-    <script src="/scripts/editor/module.js"></script>
-    <script src="/scripts/shared/module.js"></script>
-    <script src="/scripts/home/module.js"></script>
-    <script src="/scripts/editor/controllers/uiEditorController.js"></script>
-    <script src="/scripts/editor/directives/draggableDirective.js"></script>
-    <script src="/scripts/editor/directives/droppableDirective.js"></script>
-    <script src="/scripts/editor/directives/toolDirecitive.js"></script>
-    <script src="/scripts/editor/controllers/asside.components.js"></script>
-    <script src="/scripts/editor/services/dragdropService.js"></script>
-    <script src="/scripts/home/controllers/home.js"></script>
-    <script src="/scripts/editor/controllers/aside.structure.js"></script>
-    <script src="/scripts/shared/controllers/mainAppController.js"></script>
-    <script src="/scripts/shared/directives/modalDirective.js"></script>
-    <script src="/scripts/editor/controllers/main.js"></script>
-    <script src="/scripts/shared/services/loadMaskService.js"></script>
-    <!-- endinjector -->
+  <body>
+    <div ui-view="viewport" class="viewport"></div>
+    <script src="bower_components/headjs-notify/dist/head.load.min.js"></script>
+    <script src="scripts/boot.js"></script>
   </body>
 </html>

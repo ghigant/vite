@@ -1,5 +1,7 @@
-(function() {
+(function(define, angular) {
   'use strict';
-
-  angular.module('vite.shared', ['ngRoute']);
-})();
+  define([
+  ],function() {
+    return angular.module('vite.shared', ['ngCookies']);
+  });
+})(define, angular);

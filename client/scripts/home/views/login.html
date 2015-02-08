@@ -1,19 +1,17 @@
-<div class="modal-login" tabindex="-1" role="dialog">
-  <form class="formular">
+<form class="formular" ng-submit="login()">
 
-			<h3>Log in</h3>
-			<label for="username">Username</label>
-			<input type="text" class="username" name="username">
+  <h3>Log in</h3>
+  <label for="username">Username</label>
+  <input ng-model="user.email" type="text" class="username" name="username" autofocus>
 
-			<label for="password">Password</label>
-			<input type="password" class="password" name="password">
+  <label for="password">Password</label>
+  <input ng-model="user.password" type="password" class="password" name="password">
 
-			<a href="#" class="forgot-pass">Forgot password</a>
+  <a href="#" class="forgot-pass">Forgot password</a>
 
-			<button type="submit" class="submit">Submit</button>
-			<p class="or"> or </p>
-			<button type="button" class="log-tumblr">Login with Tumblr</button>
+  <button type="submit" class="submit">Submit</button>
+  <p class="or"> or </p>
+  <button type="button" class="log-tumblr" ng-click="loginOauth('tumblr')">Login with Tumblr</button>
 
-			<p class="swich">Need an account? <a href="#" class="go-register" ng-click="openModal('register')"> Register</a></p>
-	</form>
-</div>
+  <p class="swich">Need an account? <a href="/register" class="go-register"> Register</a></p>
+</form>

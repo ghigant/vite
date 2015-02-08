@@ -4,9 +4,11 @@
     <div class="side back">
       <img src="img/avatar.jpg" alt="logo" class="avatar">
       <a href="#">Profile</a>
-      <a href="#" class="delog">Logout</a>
+      <a href="#" ng-click="logout()" class="delog">Logout</a>
     </div>
   </li>
-  <editor-tool ng-click="toolClick($index, item)" ng-repeat="item in tools" data-info="item">
-  </editor-tool>
+  <li ng-repeat="tool in tools" ng-click="go(tool.state)" ng-class="{'active': tool.active}">
+    <span ng-class="tool.icon"></span>
+    <p>{{tool.text}}</p>
+  </li>
 </ul>

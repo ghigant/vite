@@ -1,21 +1,33 @@
-<div ng-controller="vite.editor.aside.StructureCtrl">
+<nav class="menu-vertical cbp-spmenu-left" ng-class="{'cbp-spmenu-open': asideOpen}" >
+	<a href="#" ui-sref="editor.index" class="close-menu">
+		<span class="icon-arrow-long-left"></span>
+	</a>
 	<hgroup>
 		<h3>Structure</h3>
 		<p class="description">Navigate and add more pages to your site</p>
 	</hgroup>
+
 	<ul class="dom">
-		<li>
-			Tumblr theme
+		<li ng-repeat="blog in blogs">
+			{{blog.title}}
 			<span class="icon-trash"></span>
 			<span class="icon-edit"></span>
 		</li>
+		<!-- <li>
+			Tumblr theme
+			<span class="icon-trash"></span>
+			<span class="icon-edit"></span>
+
+		</li>
+
 		<li>
 			Azucar theme
 			<span class="icon-trash"></span>
 			<span class="icon-edit"></span>
-		</li>
+		</li> -->
+
 		<li class="to-add">
 			<input type='text' name="pageName" placeholder="Page name" class="new-page"><span class="icon-trash"></span><span class="icon-check"></span></li>
 		<li><a href="#" class="just-add">+ add page</a></li>
 	</ul>
-</div>
+</nav>

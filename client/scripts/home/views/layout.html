@@ -1,15 +1,17 @@
-<header>
-  <a href="/">
-    <img src="img/logo.png" alt="Vite Editor" class="logo"></img>
-  </a>
-  <ul class="main-menu">
-    <li><a href="" ng-click="openModal('tour')" class="tour">TOUR</a></li>
-    <li><a href="" ng-click="openModal('register')" class="go-register">REGISTER</a></li>
-  </ul>
-</header>
+<div class="home-body">
+  <header>
+    <a href="/">
+      <img src="img/logo.png" alt="Vite Editor" class="logo"></img>
+    </a>
+    <ul class="main-menu">
+      <li><a href="#" ui-sref="vite.tour" class="tour">TOUR</a></li>
+      <li><a href="#" ui-sref="vite.register" class="go-register">REGISTER</a></li>
+    </ul>
+  </header>
 
-<div class="intro">
-  <h1>Quicker way to make templates</h1>
-  <p>Start using our editor right now by loggin in to your account.</p>
-  <button ng-click="openModal('login')" class="btn-start">START</button>
+  <div class="intro">
+    <h1>Quicker way to make templates</h1>
+    <p>Start using our editor right now by loggin in to your account.</p>
+    <a href="#" ui-sref="vite.login" class="btn-start">START</a>
+  </div>
 </div>
