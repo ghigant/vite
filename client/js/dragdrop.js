@@ -190,6 +190,7 @@
 		classie.add( instance.element, 'is-active' );
 		// highlight droppable elements if draggables intersect
 		this.highlightDroppables();
+
 	}
 
 	Draggable.prototype.onDragMove = function( instance, event, pointer ) {

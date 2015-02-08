@@ -25,7 +25,7 @@
                 var type = $draggable.attr('data-type');
                 if(['container'].indexOf(type) !== -1) {
                   $el = $el.append(
-                    $compile(angular.element('<'+type+' draggable></'+type+'>'))($scope)
+                    $compile(angular.element('<'+type+'></'+type+'>'))($scope)
                   );
                 }
               }

@@ -22,7 +22,7 @@
 .col-3 { width: 100%; }
 
 [class*='col-']:empty {
-    height: 140px;
+height: 140px;
 }
 .outline, .outline *{
     outline: 1px solid #F6A1A1;

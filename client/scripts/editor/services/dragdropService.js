@@ -9,6 +9,8 @@
       function DragDropService() {
         this.droppable = [];
 
+        this.draggable = [];
+        
         this.addDroppable = function(droppable) {
           droppable && this.droppable.push(droppable);
         }
