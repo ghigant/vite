@@ -70,7 +70,7 @@
               controller: [
                 '$scope',
                 function EditorController($scope) {
-                  
+
                 }
               ]
             }
@@ -118,6 +118,8 @@
                 require([
                   'editor/directives/draggable.directive',
                   'editor/directives/container.directive',
+                  'editor/directives/description.directive',
+                  'editor/directives/title.directive',
                   'editor/services/themeComponents'
                 ], function() {
                   deferred.resolve(arguments);

@@ -23,10 +23,15 @@
                 var $draggable = angular.element(draggable);
 
                 var type = $draggable.attr('data-type');
-                if(['container'].indexOf(type) !== -1) {
-                  $el = $el.append(
-                    $compile(angular.element('<'+type+'></'+type+'>'))($scope)
-                  );
+                if([
+                  'container',
+                  'block-description',
+                  'blog-title'].indexOf(type) !== -1) {
+                  $scope.$apply(function() {
+                    $el = $el.append(
+                      $compile(angular.element('<'+type+'></'+type+'>'))($scope)
+                    );
+                  });
                 }
               }
             });
