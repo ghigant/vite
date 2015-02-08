@@ -8,10 +8,13 @@
         return {
           restrict: 'AE',
           scope: {},
-          template: '<p draggable>{{description}}</p>',
-          replace:true,
+          template: '<p draggable ng-style="style">{{description}}</p>',
+          replace: true,
           link: function postLink($scope, $el, $attr) {
             $scope.description = 'Blog Description'
+            $scope.style = {
+              'font-size' : '20px'
+            }
           },
           controller: [
             '$scope',

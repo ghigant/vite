@@ -27,7 +27,7 @@
             var draggable = new Draggable($el[0], ddService.droppable, {
               // helper: true,
               onStart: function() {
-                disableAll(draggable);
+                
               },
               onEnd: function(wasDropped) {
                 // $rootScope.$apply(function() {
@@ -41,10 +41,11 @@
             draggable.draggie.disable();
             ddService.draggable.push(draggable);
 
-            $el.on('mouseenter', function(event) {
-              // event.preventDefault(); event.stopPropagation();
+            $el.on('mouseover', function(event) {
+              event.preventDefault();
+              event.stopPropagation();
+
               disableAll(draggable);
-              // console.log('mouse enter');
             });
 
             $scope.test = function() {

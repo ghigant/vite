@@ -8,9 +8,10 @@
       module.name + '.DragDropService',
       function DragDropService() {
         this.droppable = [];
+        this.activeDroppable = null;
 
         this.draggable = [];
-        
+
         this.addDroppable = function(droppable) {
           droppable && this.droppable.push(droppable);
         }
