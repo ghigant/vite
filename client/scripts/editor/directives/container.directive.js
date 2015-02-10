@@ -10,20 +10,32 @@
         return {
           restrict: 'EA',
           replace: true,
-          scope: {},
+          scope: {
+            structure: '=structure'
+          },
           template: [
             '<div class="row" draggable>',
-              '<div ng-repeat="row in rows" ng-class="row.class" droppable></div>',
+              '<div ng-repeat="row in rows" ng-class="row.class" droppable data-structure="structure[$index].items"></div>',
             '</div>'
           ].join(''),
           link: function($scope, $el, $attrs, $ctrl) {
-            // console.log($el);
+            // structure
+            // console.log('container');
+            // console.log($scope.structure);
             $ctrl._render = function(cols) {
               var rows = [];
               for(var i = 0; i < cols; i++) {
+                var className = 'col-' + Math.abs(4 - cols);
                 rows.push({
-                  class: 'col-' + Math.abs(4 - cols)
+                  class: className
                 });
+
+                $scope.structure.push({
+                  type: 'div',
+                  class: className,
+                  items: []
+                });
+
               }
               $scope.rows = rows;
             }

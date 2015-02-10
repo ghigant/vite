@@ -9,13 +9,15 @@
       function($http){
         return {
           restrict: 'EA',
-          scope:{},
+          scope:{
+            structure: '='
+          },
           replace: true,
-          template: '<h1 draggable ng-style="style">{{title}}</h1>',
+          template: '<h1 draggable ng-style="structure.style">{{structure.title}}</h1>',
           link: function postLink($scope, $el, $attr) {
-            $scope.title = 'Blog Title';
+            $scope.structure.title = 'Blog Title';
 
-            $scope.style = {
+            $scope.structure.style = {
               'color': '#000',
               'text-align': 'left',
               'width': '300px',
@@ -26,7 +28,7 @@
               .then(
                 function successHandle(response) {
                   var blog = response.data[0];
-                  $scope.title = blog.title;
+                  $scope.structure.title = blog.title || $scope.structure.title;
                 }
               )
           }

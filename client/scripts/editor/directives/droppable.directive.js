@@ -14,6 +14,7 @@
       var parent = this.el.parentNode;
       var i = 0;
       var attrs = null;
+
       while(parent && parent.nodeName.toLowerCase() !== 'body') {
         if(parent.hasAttribute('droppable')) {
           classie.remove( parent, 'highlight' );
@@ -22,6 +23,7 @@
         }
         parent = parent.parentNode;
       }
+
       return i !== 0;
     }
 
@@ -43,12 +45,16 @@
       '$compile',
       '$parse',
       module.name  +'.DragDropService',
-      function droppableComponent($compile, $parse, ddService) {
+      module.name  +'.Template',
+      function droppableComponent($compile, $parse, ddService, template) {
         return {
           restrict: 'A',
+          scope: {
+            structure: '='
+          },
           link: function postLink($scope, $el, $attr, ctrl) {
+            // console.log($scope.structure);
             $el.addClass('drop-area__item');
-
             var dom = $el[0];
             var droppable = new Droppable(dom, {
               onDrop : function( instance, draggable ) {
@@ -63,24 +69,55 @@
                   'block-description',
                   'blog-title'].indexOf(type) !== -1) {
                   $scope.$apply(function() {
+
+                    var index = $scope.structure.push((function(type) {
+                      var structure = {
+                        type: 'div'
+                      };
+
+                      if(type === 'container') {
+                        angular.extend(structure, {
+                          class: 'row',
+                          items: []
+                        });
+                      } else if(type === 'blog-title') {
+                        angular.extend(structure, {
+                          type: 'h1',
+                          class: 'blog-title'
+                        });
+                      } else if(type === 'block-description') {
+                        angular.extend(structure, {
+                          type: 'p',
+                          class: 'block-description'
+                        });
+                      }
+
+                      return structure;
+
+                    })(type));
+
+                    // $scope.items = $scope.items || [];
+                    // $scope.items[index - 1] = [];
+                    var newEl = angular.element('<'+type+'></'+type+'>');
+
+                    newEl.attr('data-structure', (function(type) {
+                      if(type === 'container') {
+                        return 'structure['+ (index - 1) +'].items';
+                      } else {
+                        return 'structure['+ (index - 1) +']'
+                      }
+                    })(type));
+
+
                     $el = $el.append(
-                      $compile(angular.element('<'+type+'></'+type+'>'))($scope)
+                      $compile(newEl)($scope)
                     );
                   });
+
+                  // console.log($scope.structure);
                 }
               }
             });
-
-            // $el.on('mouseover', function(event) {
-            //   // event.preventDefault();
-            //   // event.stopPropagation();
-            //   console.log('mouseover');
-            //   ddService.activeDroppable = droppable;
-            // }).on('mouseenter', function() {
-            //   console.log('mouse enter');
-            // }).on('mouseleave', function() {
-            //   console.log('mouse leave');
-            // });
 
             ddService.addDroppable(droppable);
           }

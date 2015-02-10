@@ -7,12 +7,14 @@
       function($http) {
         return {
           restrict: 'AE',
-          scope: {},
-          template: '<p draggable ng-style="style">{{description}}</p>',
+          scope: {
+            structure: '='
+          },
+          template: '<p draggable ng-style="structure.style">{{structure.text}}</p>',
           replace: true,
           link: function postLink($scope, $el, $attr) {
-            $scope.description = 'Blog Description'
-            $scope.style = {
+            $scope.structure.text = 'Blog Description'
+            $scope.structure.style = {
               'font-size' : '20px'
             }
           },
@@ -24,7 +26,7 @@
                 .then(
                   function successHandle(response) {
                     var blog = response.data[0];
-                    $scope.description = blog.description || $scope.description;
+                    $scope.structure.text = blog.description || $scope.structure.description;
                   }
                 );
             }

@@ -24,7 +24,9 @@
                     'dragdrop',
                     'editor/controllers/uiEditor',
                     'editor/controllers/toolbar.controller',
-                    'editor/directives/droppable.directive'
+                    'editor/directives/droppable.directive',
+                    'editor/services/structure.service',
+                    // 'editor/directives/viewport.directive'
                   ], function() {
                     dfd.resolve();
                   });
@@ -70,7 +72,10 @@
               controller: [
                 '$scope',
                 function EditorController($scope) {
-
+                  $scope.structure = [];
+                  $scope.save = function(){
+                    console.log($scope.structure);
+                  }
                 }
               ]
             }
