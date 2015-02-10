@@ -10,6 +10,7 @@ module.exports = function(app) {
 
   app.use('/api/user', require('./api/user'));
   app.use('/api/tumblr', require('./api/tumblr'));
+  app.use('/api/template', require('./api/template'));
 
   // app.get('/', function(req, res) {
   //   res.render('index.html');

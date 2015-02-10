@@ -71,11 +71,22 @@
               templateUrl: config.views + '/layout/content.html',
               controller: [
                 '$scope',
-                function EditorController($scope) {
+                '$http',
+                function EditorController($scope, $http) {
                   $scope.structure = [];
                   $scope.save = function(){
                     console.log($scope.structure);
+
+                    $http.post('/api/template/save', angular.copy(
+                      $scope.structure
+                    )).then(
+                      function successHandle() {
+                        console.log('success save action');
+                        console.log(arguments);
+                      }
+                    );
                   }
+
                 }
               ]
             }
@@ -139,7 +150,10 @@
           url: '/preview',
           views: {
             'viewport@': {
-              templateUrl: config.views + '/layout/preview.html'
+              templateUrl: config.views + '/layout/preview.html',
+              controller: function() {
+
+              }
             }
           }
         });

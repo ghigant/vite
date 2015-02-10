@@ -9,8 +9,8 @@ var User    = require('./../user/user.model');
 exports.info = function(req, res) {
   var user = req.user;
   var filter = req.params.filter || '';
-  console.log('fiter');
-  console.log('filter:', filter);
+  // console.log('fiter');
+  // console.log('filter:', filter);
   if(user.provider === 'tumblr') {
     var client = tumblr.createClient({
       consumer_key: config.tumblr.clientID,

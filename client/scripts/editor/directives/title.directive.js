@@ -13,9 +13,9 @@
             structure: '='
           },
           replace: true,
-          template: '<h1 draggable ng-style="structure.style">{{structure.title}}</h1>',
+          template: '<h1 draggable ng-style="structure.style">{{structure.text}}</h1>',
           link: function postLink($scope, $el, $attr) {
-            $scope.structure.title = 'Blog Title';
+            $scope.structure.text = 'Blog Title';
 
             $scope.structure.style = {
               'color': '#000',
@@ -28,7 +28,7 @@
               .then(
                 function successHandle(response) {
                   var blog = response.data[0];
-                  $scope.structure.title = blog.title || $scope.structure.title;
+                  $scope.structure.text = blog.text || $scope.structure.text;
                 }
               )
           }
