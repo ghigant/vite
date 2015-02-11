@@ -4,3 +4,4 @@ client/bower_components
 server/config/local.env.js
 server/templates/tpl
 !server/tempaltes/tpl/preview.html
+!server/tempaltes/tpl/tumblr.html
