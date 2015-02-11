@@ -72,7 +72,8 @@
               controller: [
                 '$scope',
                 '$http',
-                function EditorController($scope, $http) {
+                '$state',
+                function EditorController($scope, $http, $state) {
                   $scope.structure = [];
                   $scope.save = function(){
                     console.log($scope.structure);
@@ -83,6 +84,9 @@
                       function successHandle() {
                         console.log('success save action');
                         console.log(arguments);
+                        $state.go('editor.preview', {
+                          id: '54d4c988869af3620a66a061'
+                        });
                       }
                     );
                   }
@@ -147,13 +151,20 @@
           }
         })
         .state('editor.preview', {
-          url: '/preview',
+          url: '/preview/:id',
           views: {
             'viewport@': {
               templateUrl: config.views + '/layout/preview.html',
-              controller: function() {
-
-              }
+              controller: [
+                '$scope',
+                '$location',
+                '$stateParams',
+                function($scope, $location, $stateParams) {
+                  $scope.previewUrl = 'http://' + $location.host() +
+                    ($location.port() ? ':' + $location.port() : '' ) +
+                    '/api/template/preview/' + $stateParams.id;
+                }
+              ]
             }
           }
         });

@@ -3,8 +3,6 @@
 		<li><img src="/img/logo-long.svg" alt="logo"></li>
 	</a>
 	<a href="#" ui-sref="editor.index"><li><span class="icon-eye-blocked"></span></li></a>
-	<a href="#" class="prev-download"><li><span class="icon-download"></span></li></a>
+	<a href="#" ui-sref="editor.index" class="prev-download"><li><span class="icon-download"></span></li></a>
 </ul>
-<div style="margin: 0 auto; padding-top: 100px; text-align: center;">
-	<h1>Preview Page</h1>
-</div>
+<iframe ng-src="{{previewUrl}}" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%" class="preview-theme"></iframe>

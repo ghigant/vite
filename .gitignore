@@ -2,3 +2,5 @@ node_modules
 client/bower_components
 .tmp
 server/config/local.env.js
+server/templates/tpl
+!server/tempaltes/tpl/preview.html

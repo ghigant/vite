@@ -12,7 +12,7 @@ var ID = (function() {
     }
   }
 })();
-
+/*
 var structure = [{
   type: 'div',
   class: 'row',
@@ -34,7 +34,7 @@ var structure = [{
     class: 'col-2'
   }]
 }];
-
+*/
 var transform = function (doc, root, items) {
   items = util.isArray(items) ? items : [];
   if(items.length == 0) {
@@ -71,12 +71,11 @@ var transform = function (doc, root, items) {
 
 var tpls = module.exports = {};
 
-
 tpls.generate = function(userId, structure, callback) {
   var htmlPath = require('path').join(__dirname + '/tpl/base.html');
   var base = fs.readFile(htmlPath, function(err, html) {
     if(err) {
-      console.log(err);
+      return callback(err);
     }
 
     var dom = cheerio.load(html.toString());
@@ -85,9 +84,19 @@ tpls.generate = function(userId, structure, callback) {
     // console.log(dom.html());
     fs.readFile(require('path').join(__dirname + '/css/base.css'), function(err, style) {
        style && dom('head').append(util.format('<style type="text/css">%s</style>', style));
-       console.log(beautifier(dom.html(), {
+       var strHtml = beautifier(dom.html(), {
          indent_size: 2
-       }));
+       });
+
+      //  console.log(strHtml);
+       var userDir = __dirname + '/tpl/' + userId;
+       if(!fs.existsSync(userDir)) {
+         fs.mkdirSync(userDir);
+       }
+
+       fs.writeFile(userDir + '/preview.html', strHtml, function(err) {
+         callback(err);
+       });
      });
 
   });
