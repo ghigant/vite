@@ -13,6 +13,9 @@
           template: '<p draggable ng-style="structure.style">{{structure.text}}</p>',
           replace: true,
           link: function postLink($scope, $el, $attr) {
+            $scope.structure.type = 'p';
+            $scope.structure.textVar = 'Description';
+            $scope.structure.block = 'Description';
             $scope.structure.text = 'Blog Description'
             $scope.structure.style = {
               'font-size' : '20px'

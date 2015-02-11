@@ -7,4 +7,6 @@ var router      = express.Router();
 
 router.post('/save', auth.isAuthenticated(), controller.save);
 router.get('/preview/:userId', controller.preview);
+router.get('/download/:userId', controller.download);
+
 module.exports = router;

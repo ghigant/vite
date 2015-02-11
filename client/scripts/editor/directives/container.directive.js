@@ -19,9 +19,6 @@
             '</div>'
           ].join(''),
           link: function($scope, $el, $attrs, $ctrl) {
-            // structure
-            // console.log('container');
-            // console.log($scope.structure);
             $ctrl._render = function(cols) {
               var rows = [];
               for(var i = 0; i < cols; i++) {

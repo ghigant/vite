@@ -81,11 +81,11 @@
                     $http.post('/api/template/save', angular.copy(
                       $scope.structure
                     )).then(
-                      function successHandle() {
+                      function successHandle(response) {
                         console.log('success save action');
                         console.log(arguments);
                         $state.go('editor.preview', {
-                          id: '54d4c988869af3620a66a061'
+                          id: response.data.id
                         });
                       }
                     );
@@ -160,6 +160,12 @@
                 '$location',
                 '$stateParams',
                 function($scope, $location, $stateParams) {
+                  $scope.downloadUrl = 'http://' + $location.host() +
+                    ($location.port() ? ':' + $location.port() : '' ) +
+                    '/api/template/download/' + $stateParams.id
+                  $scope.download = function() {
+                    location.href = $scope.downloadUrl;
+                  }
                   $scope.previewUrl = 'http://' + $location.host() +
                     ($location.port() ? ':' + $location.port() : '' ) +
                     '/api/template/preview/' + $stateParams.id;
