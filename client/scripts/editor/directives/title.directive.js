@@ -31,7 +31,7 @@
               .then(
                 function successHandle(response) {
                   var blog = response.data[0];
-                  $scope.structure.text = blog.text || $scope.structure.text;
+                  $scope.structure.text = blog.title || $scope.structure.text;
                 }
               )
           }
