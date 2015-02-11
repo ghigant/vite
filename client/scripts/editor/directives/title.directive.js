@@ -15,6 +15,7 @@
           replace: true,
           template: '<h1 draggable ng-style="structure.style">{{structure.text}}</h1>',
           link: function postLink($scope, $el, $attr) {
+
             $scope.structure.type = 'h1';
             $scope.structure.textVar = 'Title';
             $scope.structure.text = 'Blog Title';

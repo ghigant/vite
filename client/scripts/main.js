@@ -12,6 +12,7 @@
         'ui.router',
         'ngAnimate',
         'ngCookies',
+        'contenteditable',
         account.name,
         home.name,
         editor.name

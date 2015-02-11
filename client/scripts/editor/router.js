@@ -82,8 +82,8 @@
                       $scope.structure
                     )).then(
                       function successHandle(response) {
-                        console.log('success save action');
-                        console.log(arguments);
+                        // console.log('success save action');
+                        // console.log(arguments);
                         $state.go('editor.preview', {
                           id: response.data.id
                         });
@@ -140,6 +140,9 @@
                   'editor/directives/container.directive',
                   'editor/directives/description.directive',
                   'editor/directives/title.directive',
+                  'editor/directives/posts.directive',
+                  'editor/directives/heading.directive',
+                  'editor/directives/list.directive',
                   'editor/services/themeComponents'
                 ], function() {
                   deferred.resolve(arguments);

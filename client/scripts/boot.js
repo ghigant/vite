@@ -8,7 +8,8 @@
     { 'ngAnimate':    './bower_components/angular-animate/angular-animate.js', size: '77784'},
     { 'ngCookies':    './bower_components/angular-cookies/angular-cookies.js', size: '5824'},
     { 'ui.router':    './bower_components/angular-ui-router/release/angular-ui-router.js', size: '156740'},
-    { 'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js', size: '142792'}
+    { 'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js', size: '142792'},
+    { 'contenteditable': './bower_components/angular-contenteditable/angular-contenteditable.js', size:'2921' }
   )
   .ready("ALL", function() {
     require.config({

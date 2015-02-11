@@ -39,7 +39,7 @@ var structure = [{
 
 var getStrStyle = function(style) {
   var strStyle = '';
-  _.each(strStyle, function(val, key) {
+  _.each(style, function(val, key) {
     strStyle += util.format('%s: %s;', key, val);
   });
 

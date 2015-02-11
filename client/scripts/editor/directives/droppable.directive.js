@@ -67,16 +67,19 @@
                 if(isActive && [
                   'container',
                   'block-description',
-                  'blog-title'].indexOf(type) !== -1) {
+                  'blog-title',
+                  'block-posts',
+                  'heading',
+                  'list'].indexOf(type) !== -1) {
+                  console.log('type:',type);
                   $scope.$apply(function() {
 
                     var index = $scope.structure.push((function(type) {
-                      var structure = {
-                        type: 'div'
-                      };
+                      var structure = {};
 
                       if(type === 'container') {
                         angular.extend(structure, {
+                          type: 'div',
                           class: 'row',
                           items: []
                         });
